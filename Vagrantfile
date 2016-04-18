@@ -233,6 +233,8 @@ EOT
 # now lets create the registry
 oadm registry --create --service-account=admin
 
+gofabric8 pull cd-pipeline
+
 # And install the node-local fluentd pod
 cat <<'EOF' > /opt/openshift/openshift.local.manifests/fluentd.yaml
 apiVersion: v1
