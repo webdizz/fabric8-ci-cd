@@ -232,7 +232,6 @@ EOT
 
 # now lets create the registry
 oadm registry --create --service-account=admin
-oadm new-project fabric8-ci-cd
 
 # And install the node-local fluentd pod
 cat <<'EOF' > /opt/openshift/openshift.local.manifests/fluentd.yaml
