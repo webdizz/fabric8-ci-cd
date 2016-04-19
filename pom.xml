@@ -37,6 +37,8 @@
     <fabric8.annotations.service.servicepath>/customer</fabric8.annotations.service.servicepath>
     <fabric8.label.hystrix.enabled>true</fabric8.label.hystrix.enabled>
     <fabric8.label.hystrix.cluster>default</fabric8.label.hystrix.cluster>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <dependencyManagement>
