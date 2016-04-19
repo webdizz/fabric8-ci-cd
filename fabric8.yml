@@ -1,5 +1,5 @@
 ---
-pipeline: "workflows/maven/CanaryReleaseAndStage/Jenkinsfile"
+pipeline: "workflows/maven/CanaryReleaseStageAndApprovePromote/Jenkinsfile"
 chatRoom: "fabric8_default"
 buildName: "fabric8-ci-cd"
 codeReview: false
@@ -9,6 +9,8 @@ links:
   Room: "http://letschat.vagrant.f8/#!/room/5715eecc3e7cb0150065bc5f"
   Staging: "http://172.30.73.220:80/kubernetes/pods?namespace=default-staging"
   Testing: "http://172.30.73.220:80/kubernetes/pods?namespace=default-testing"
+  Production: "http://172.30.73.220:80/kubernetes/pods?namespace=default-production"
 environments:
   Testing: "default-testing"
   Staging: "default-staging"
+  Production: "default-production"
