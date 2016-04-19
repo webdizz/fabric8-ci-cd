@@ -237,6 +237,8 @@ gofabric8 pull cd-pipeline
 gofabric8 pull kubeflix
 gofabric8 pull management
 gofabric8 pull letschat
+gofabric8 pull chat-letschat
+gofabric8 pull chaos-monkey
 docker pull fabric8/maven-builder
 docker pull fabric8/jenkins-jnlp-client
 docker pull fabric8/java-jboss-openjdk8-jdk:1.0.10
