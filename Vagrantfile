@@ -234,6 +234,12 @@ EOT
 oadm registry --create --service-account=admin
 
 gofabric8 pull cd-pipeline
+gofabric8 pull kubeflix
+gofabric8 pull management
+gofabric8 pull letschat
+docker pull fabric8/maven-builder
+docker pull fabric8/jenkins-jnlp-client
+docker pull fabric8/java-jboss-openjdk8-jdk:1.0.10
 
 # And install the node-local fluentd pod
 cat <<'EOF' > /opt/openshift/openshift.local.manifests/fluentd.yaml
