@@ -8,20 +8,29 @@
 
   <properties>
     <fabric8.version>2.2.105</fabric8.version>
+    <docker.assemblyDescriptorRef>artifact</docker.assemblyDescriptorRef>
     <docker.maven.plugin.version>0.14.2</docker.maven.plugin.version>
 
     <spring-boot.version>1.3.3.RELEASE</spring-boot.version>
     <spring-cloud.version>Angel.SR6</spring-cloud.version>
 
-    <docker.from>fabric8/java-jboss-openjdk8-jdk:1.0.10</docker.from>
-    <docker.image>${fabric8.dockerUser}/${project.artifactId}:${project.version}</docker.image>
+    <docker.from>docker.io/fabric8/java-jboss-openjdk8-jdk:1.0.10</docker.from>
+
+    <docker.port.container.jolokia>8778</docker.port.container.jolokia>
+    <docker.image>fabric8/${project.artifactId}:${project.version}</docker.image>
 
     <fabric8.namespace>default</fabric8.namespace>
+
+    <fabric8.iconRef>icons/spring-boot</fabric8.iconRef>
     <fabric8.dockerUser>fabric8</fabric8.dockerUser>
     <docker.port.container.http>8080</docker.port.container.http>
     <fabric8.label.project>fabric8-ci-cd</fabric8.label.project>
     <fabric8.label.version>${project.version}</fabric8.label.version>
-    <fabric8.service.name>${project.artifactId}</fabric8.service.name>
+    <fabric8.service.name>customer-app</fabric8.service.name>
+    <fabric8.readinessProbe.httpGet.path>/health</fabric8.readinessProbe.httpGet.path>
+    <fabric8.readinessProbe.httpGet.port>8080</fabric8.readinessProbe.httpGet.port>
+    <fabric8.readinessProbe.initialDelaySeconds>5</fabric8.readinessProbe.initialDelaySeconds>
+    <fabric8.readinessProbe.timeoutSeconds>30</fabric8.readinessProbe.timeoutSeconds>
     <fabric8.service.port>80</fabric8.service.port>
     <fabric8.service.containerPort>8080</fabric8.service.containerPort>
     <fabric8.service.type>LoadBalancer</fabric8.service.type>
