@@ -19,10 +19,12 @@
     <docker.port.container.jolokia>8778</docker.port.container.jolokia>
     <docker.image>fabric8/${project.artifactId}:${project.version}</docker.image>
 
+    <fabric8.iconRef>spring-boot</fabric8.iconRef>
     <fabric8.namespace>default</fabric8.namespace>
 
     <fabric8.iconRef>icons/spring-boot</fabric8.iconRef>
     <fabric8.dockerUser>fabric8</fabric8.dockerUser>
+    <fabric8.replicas>2</fabric8.replicas>
     <docker.port.container.http>8080</docker.port.container.http>
     <fabric8.label.project>fabric8-ci-cd</fabric8.label.project>
     <fabric8.label.version>${project.version}</fabric8.label.version>
