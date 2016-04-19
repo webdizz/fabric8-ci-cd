@@ -25,6 +25,10 @@
     <fabric8.iconRef>icons/spring-boot</fabric8.iconRef>
     <fabric8.dockerUser>fabric8</fabric8.dockerUser>
     <fabric8.replicas>2</fabric8.replicas>
+    <fabric8.readinessProbe.httpGet.path>/health</fabric8.readinessProbe.httpGet.path>
+    <fabric8.readinessProbe.httpGet.port>8080</fabric8.readinessProbe.httpGet.port>
+    <fabric8.readinessProbe.initialDelaySeconds>5</fabric8.readinessProbe.initialDelaySeconds>
+    <fabric8.serviceAccount>fabric8</fabric8.serviceAccount>
     <docker.port.container.http>8080</docker.port.container.http>
     <fabric8.label.project>fabric8-ci-cd</fabric8.label.project>
     <fabric8.label.version>${project.version}</fabric8.label.version>
@@ -75,20 +79,12 @@
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter</artifactId>
-    </dependency>
-    <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
     <dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-hystrix</artifactId>
-		</dependency>
-    <dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
 		</dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
