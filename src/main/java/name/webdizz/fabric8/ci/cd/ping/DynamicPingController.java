@@ -14,6 +14,6 @@ public class DynamicPingController {
 
     @RequestMapping("/ping")
     public String ping() {
-        return String.format("Hello, I'm a Pinger @%s of %s generation!", environment.getProperty("kubernetes.namespace"), environment.getProperty("app.version"));
+        return String.format("Hello, I'm a Pinger @%s:%s of %s generation!", environment.getProperty("hostname"), environment.getProperty("kubernetes.namespace"), environment.getProperty("app.version"));
     }
 }
