@@ -32,7 +32,7 @@
     <docker.port.container.http>8080</docker.port.container.http>
     <fabric8.label.project>fabric8-ci-cd</fabric8.label.project>
     <fabric8.label.version>${project.version}</fabric8.label.version>
-    <fabric8.service.name>customer-app</fabric8.service.name>
+    <fabric8.service.name>ping-app</fabric8.service.name>
     <fabric8.readinessProbe.httpGet.path>/health</fabric8.readinessProbe.httpGet.path>
     <fabric8.readinessProbe.httpGet.port>8080</fabric8.readinessProbe.httpGet.port>
     <fabric8.readinessProbe.initialDelaySeconds>5</fabric8.readinessProbe.initialDelaySeconds>
@@ -40,7 +40,7 @@
     <fabric8.service.port>80</fabric8.service.port>
     <fabric8.service.containerPort>8080</fabric8.service.containerPort>
     <fabric8.service.type>LoadBalancer</fabric8.service.type>
-    <fabric8.annotations.service.servicepath>/customer</fabric8.annotations.service.servicepath>
+    <fabric8.annotations.service.servicepath>/ping</fabric8.annotations.service.servicepath>
     <fabric8.label.hystrix.enabled>true</fabric8.label.hystrix.enabled>
     <fabric8.label.hystrix.cluster>default</fabric8.label.hystrix.cluster>
 
