@@ -1,0 +1,36 @@
+{
+  "apiVersion": "v1",
+  "kind": "BuildConfig",
+  "metadata": {
+    "name": "fabric8-ci-cd",
+    "labels": {}
+  },
+  "spec": {
+    "source": {
+      "type": "Git",
+      "git": {
+        "uri": "https://github.com/webdizz/fabric8-ci-cd.git"
+      },
+      "sourceSecret": {
+        "name": "webdizz-github"
+      }
+    },
+    "strategy": {
+      "type": "Custom",
+      "customStrategy": {
+        "from": {
+          "kind": "DockerImage",
+          "name": "fabric8/openshift-s2i-jenkins-trigger"
+        },
+        "env": [
+          {
+            "name": "BASE_URI"
+          },
+          {
+            "name": "JOB_NAME"
+          }
+        ]
+      }
+    }
+  }
+}
