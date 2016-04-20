@@ -5,8 +5,8 @@ buildName: "fabric8-ci-cd"
 codeReview: false
 links:
   Git: "https://github.com/webdizz/fabric8-ci-cd.git"
-  Job: "http://172.30.126.40:80/job/fabric8-ci-cd"
-  Room: "http://letschat.vagrant.f8/#!/room/57174e41aadc3b1600de1912"
+  Job: "http://172.30.69.148:80/job/fabric8-ci-cd"
+  Room: "http://letschat.vagrant.f8/#!/room/57175164b77209160060d483"
   Staging: "http://172.30.171.205:80/kubernetes/pods?namespace=default-staging"
   Testing: "http://172.30.171.205:80/kubernetes/pods?namespace=default-testing"
   Production: "http://172.30.171.205:80/kubernetes/pods?namespace=default-production"
