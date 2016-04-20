@@ -1,4 +1,4 @@
-package name.webdizz.fabric8.ci.cd.customer;
+package name.webdizz.fabric8.ci.cd.ping;
 
 import org.springframework.core.env.Environment;
 import org.springframework.beans.factory.annotation.Autowired;

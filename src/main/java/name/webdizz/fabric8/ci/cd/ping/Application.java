@@ -1,4 +1,4 @@
-package name.webdizz.fabric8.ci.cd.customer;
+package name.webdizz.fabric8.ci.cd.ping;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
