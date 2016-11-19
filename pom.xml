@@ -20,8 +20,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
-    <docker.image>fabric8/${project.artifactId}:${project.version}</docker.image>
-    <docker.from>fabric8/s2i-java:1.3.6</docker.from>
   </properties>
 
   <dependencies>
@@ -82,9 +80,9 @@
         <configuration>
           <images>
             <image>
-              <name>${docker.image}</name>
+              <name>fabric8/${project.artifactId}:${project.version}</name>
               <build>
-                <from>${docker.from}</from>
+                <from>fabric8/s2i-java:1.3.6</from>
                 <assembly>
                   <basedir>/app</basedir>
                   <descriptorRef>artifact</descriptorRef>

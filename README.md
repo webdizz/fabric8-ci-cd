@@ -29,3 +29,7 @@ Create OpenShift cluster
 # Default Gogs credentials
 
 gogsadmin/RedHat$1
+
+# Additional images to pull:
+- fabric8/maven-builder
+- iocanel/jenkins-jnlp-client:latest
