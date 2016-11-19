@@ -1,16 +1,15 @@
 ---
-pipeline: "workflows/maven/CanaryReleaseStageAndApprovePromote/Jenkinsfile"
-chatRoom: "fabric8_default"
-buildName: "fabric8-ci-cd"
+pipeline: "maven/CanaryReleaseStageAndApprovePromote/Jenkinsfile"
+buildName: "fabric8-springboot"
 codeReview: false
 links:
-  Git: "https://github.com/webdizz/fabric8-ci-cd.git"
-  Job: "http://172.30.69.148:80/job/fabric8-ci-cd"
-  Room: "http://letschat.vagrant.f8/#!/room/57175164b77209160060d483"
-  Staging: "http://172.30.171.205:80/kubernetes/pods?namespace=default-staging"
-  Testing: "http://172.30.171.205:80/kubernetes/pods?namespace=default-testing"
-  Production: "http://172.30.171.205:80/kubernetes/pods?namespace=default-production"
+  Git: "http://192.168.99.100:32210/gogsadmin/fabric8-springboot.git"
+  Job: "http://192.168.99.100:32638/job/fabric8-springboot"
+  Production: "http://172.30.218.255:80/kubernetes/pods?namespace=default-production"
+  Staging: "http://172.30.218.255:80/kubernetes/pods?namespace=default-staging"
+  Testing: "http://172.30.218.255:80/kubernetes/pods?namespace=default-testing"
 environments:
   Testing: "default-testing"
   Staging: "default-staging"
   Production: "default-production"
+useLocalFlow: true

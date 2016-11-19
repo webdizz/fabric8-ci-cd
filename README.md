@@ -1,28 +1,31 @@
 # fabric8-ci-cd
 Fabric8 CI/CD
 
+# Docker Registry Proxy Cache
 
-# Step-by-step instruction
+Docker Registry configuration file `docker-registry-config.yml`
 
-```bash
-  vagrant up # run Vagrant based box with OpenShift Master & Node
-
-  export KUBERNETES_DOMAIN=vagrant.f8
-  export DOCKER_HOST=tcp://vagrant.f8:2375
-
-  oc login https://172.28.128.4:8443 # to login into OpenShift using OpenShift CLI
-
-  oc project default # to switch into Demo project
-
-  oc create -f fabric8-support/*.svc.acnt.yml # to create missing service accounts
-
-  oc create -f fabric8-support/build-config.json # to create build config
-
-  oc create -n user-secrets-source-admin -f fabric8-support/webdizz-github.secret.yml
-
-  # run build
-
-  # create fabric8 service account in more new projects
-  oc create -n default-staging -f fabric8-support/fabric8.svc.acnt.yml
-  oc create -n default-production -f fabric8-support/fabric8.svc.acnt.yml
+Start Docker Registry
 ```
+  cp docker-registry-config.yml /tmp/docker-registry/config.yml
+
+  docker run -d --restart=always -p 192.168.50.10:5000:5000 --name v2-mirror \
+    -v /tmp/docker-registry:/var/lib/registry registry:2 /var/lib/registry/config.yml
+```
+  Make sure `--registry-mirror=https://<my-docker-mirror-host>:<port-number>` added to docker daemon configuration file. Here are some additional details https://blog.docker.com/2015/10/registry-proxy-cache-docker-open-source/.
+
+# Run OpenShift using Minishift
+
+Create OpenShift cluster
+
+```
+  minishift start --cpus 8 --deploy-registry=true --deploy-router true --disk-size 40g  --openshift-version v1.3.1 --vm-driver virtualbox --memory 8144
+```
+# Deploy fabric8
+
+```
+ gofabric8 deploy -y --domain f8 --pv --version=2.4.3
+```
+# Default Gogs credentials
+
+gogsadmin/RedHat$1
